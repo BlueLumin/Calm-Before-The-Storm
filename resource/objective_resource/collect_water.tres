@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ObjectiveResource" load_steps=3 format=3 uid="uid://bsn7cq04i08s8"]
+
+[ext_resource type="Script" path="res://resource/objective_resource/objective_resource.gd" id="1_17xw1"]
+[ext_resource type="Resource" uid="uid://87qq8ot3imxp" path="res://resource/collectable_resouce/water.tres" id="1_cwfhp"]
+
+[resource]
+script = ExtResource("1_17xw1")
+id = "collect_water"
+display_name = "Water"
+objective_description = "Collect %d/%d drops of water"
+completed_description = "Water collected"
+related_resouce = ExtResource("1_cwfhp")
+quantity_range = Vector2(3, 3)

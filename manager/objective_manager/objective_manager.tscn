@@ -1,0 +1,13 @@
+[gd_scene load_steps=8 format=3 uid="uid://dl4mr616y1pon"]
+
+[ext_resource type="Script" path="res://manager/objective_manager/objective_manager.gd" id="1_dw8rc"]
+[ext_resource type="Script" path="res://resource/objective_resource/objective_resource.gd" id="2_trq6p"]
+[ext_resource type="Resource" uid="uid://ckbulo4qktiw4" path="res://resource/objective_resource/collect_carrion.tres" id="3_vdaaw"]
+[ext_resource type="Resource" uid="uid://ig4t6s0l1yd0" path="res://resource/objective_resource/collect_moss_ball.tres" id="4_2ij5j"]
+[ext_resource type="Resource" uid="uid://bqkkdpf5asvu8" path="res://resource/objective_resource/collect_scrap_wood.tres" id="4_jwedo"]
+[ext_resource type="Resource" uid="uid://dpci1gp2m6cu1" path="res://resource/objective_resource/collect_power_cell.tres" id="5_g2gn1"]
+[ext_resource type="Resource" uid="uid://bsn7cq04i08s8" path="res://resource/objective_resource/collect_water.tres" id="7_x8tx3"]
+
+[node name="ObjectiveManager" type="Node" groups=["objective_manager"]]
+script = ExtResource("1_dw8rc")
+objective_pool = Array[ExtResource("2_trq6p")]([ExtResource("3_vdaaw"), ExtResource("4_2ij5j"), ExtResource("5_g2gn1"), ExtResource("7_x8tx3"), ExtResource("4_jwedo")])

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CollectableResource" load_steps=2 format=3 uid="uid://bjmlh52378pny"]
+
+[ext_resource type="Script" path="res://resource/collectable_resouce/collectable_resouce.gd" id="1_cukbo"]
+
+[resource]
+script = ExtResource("1_cukbo")
+id = "carrion"
+collectable_name = "Carrion"
+fuel_point_value = 1

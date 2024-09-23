@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://duff0atorrwsp"]
+
+[ext_resource type="Script" path="res://scene/elevator/elevator_shaft.gd" id="1_eek08"]
+[ext_resource type="Texture2D" uid="uid://cgtt2kx08tewf" path="res://scene/elevator/Shaft Scene.png" id="1_md07g"]
+[ext_resource type="PackedScene" uid="uid://dium823wa4x3s" path="res://scene/elevator/elevator.tscn" id="2_gdmjh"]
+[ext_resource type="Texture2D" uid="uid://b4q48y11xy0yl" path="res://scene/player/Idle.png" id="4_apjt7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7cnb"]
+atlas = ExtResource("4_apjt7")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enxeq"]
+atlas = ExtResource("4_apjt7")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkalx"]
+atlas = ExtResource("4_apjt7")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bc1jx"]
+atlas = ExtResource("4_apjt7")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x5jmu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7cnb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enxeq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkalx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bc1jx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ElevatorShaft" type="Node2D" node_paths=PackedStringArray("elevator")]
+script = ExtResource("1_eek08")
+elevator = NodePath("Elevator")
+
+[node name="ElevatorSharftSprte" type="Sprite2D" parent="."]
+position = Vector2(316, 173)
+texture = ExtResource("1_md07g")
+
+[node name="Camera2D" type="Camera2D" parent="ElevatorSharftSprte"]
+zoom = Vector2(3, 3)
+process_callback = 0
+
+[node name="DownPosition" type="Marker2D" parent="."]
+position = Vector2(316, 250)
+
+[node name="UpPosition" type="Marker2D" parent="."]
+position = Vector2(316, 98)
+
+[node name="Elevator" parent="." instance=ExtResource("2_gdmjh")]
+position = Vector2(316, 250)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Elevator"]
+show_behind_parent = true
+position = Vector2(0, -5)
+sprite_frames = SubResource("SpriteFrames_x5jmu")
+autoplay = "default"

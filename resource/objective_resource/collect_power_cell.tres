@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ObjectiveResource" load_steps=3 format=3 uid="uid://dpci1gp2m6cu1"]
+
+[ext_resource type="Resource" uid="uid://8te8bmaa4ohi" path="res://resource/collectable_resouce/power_cell.tres" id="1_c2pj7"]
+[ext_resource type="Script" path="res://resource/objective_resource/objective_resource.gd" id="1_gyut1"]
+
+[resource]
+script = ExtResource("1_gyut1")
+id = "collect_power_cell"
+display_name = "Power Cells"
+objective_description = "Collect %d/%d power cells"
+completed_description = "Power cells collected"
+related_resouce = ExtResource("1_c2pj7")
+quantity_range = Vector2(1, 3)

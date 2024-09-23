@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccaio4w86tkgs"]
+
+[ext_resource type="Script" path="res://manager/resource_spawner_manager/resource_spawner_manager.gd" id="1_4cdp4"]
+
+[node name="ResourceSpawnerManager" type="Node2D" groups=["resource_spawn_manager"]]
+script = ExtResource("1_4cdp4")

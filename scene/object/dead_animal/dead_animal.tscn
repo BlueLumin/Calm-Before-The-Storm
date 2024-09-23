@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpvtiavt7vrsq"]
+
+[ext_resource type="Script" path="res://component/interactable_component/interactable_object_script.gd" id="1_hqa8o"]
+[ext_resource type="PackedScene" uid="uid://d4arem2t0tcj8" path="res://component/interactable_component/resource_interactable_component.tscn" id="1_rqc8g"]
+[ext_resource type="PackedScene" uid="uid://c5rh6mb065jxm" path="res://scene/collectable/carrion/carrion.tscn" id="2_o1w2g"]
+[ext_resource type="Texture2D" uid="uid://uo4tq8x7mgfc" path="res://scene/object/dead_animal/Carrion Node.png" id="3_lddp4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l8fx8"]
+radius = 29.0172
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yvaf6"]
+radius = 2.0
+
+[node name="DeadAnimal" type="Node2D" node_paths=PackedStringArray("sprite", "interactable_component")]
+y_sort_enabled = true
+script = ExtResource("1_hqa8o")
+sprite = NodePath("Sprite2D")
+interactable_component = NodePath("InteractableComponent")
+
+[node name="InteractableComponent" parent="." instance=ExtResource("1_rqc8g")]
+resource = ExtResource("2_o1w2g")
+max_drop_rate = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_l8fx8")
+debug_color = Color(0.358822, 0.617772, 0, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_lddp4")
+offset = Vector2(0, -6)
+hframes = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-3, -2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_yvaf6")

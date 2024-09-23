@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ObjectiveResource" load_steps=3 format=3 uid="uid://ig4t6s0l1yd0"]
+
+[ext_resource type="Resource" uid="uid://jdglp1lfkde5" path="res://resource/collectable_resouce/moss_ball.tres" id="1_enmhe"]
+[ext_resource type="Script" path="res://resource/objective_resource/objective_resource.gd" id="1_iq6kt"]
+
+[resource]
+script = ExtResource("1_iq6kt")
+id = "collect_moss_ball"
+display_name = "Moss Balls"
+objective_description = "Collect %d/%d moss balls"
+completed_description = "Moss collected"
+related_resouce = ExtResource("1_enmhe")
+quantity_range = Vector2(5, 10)

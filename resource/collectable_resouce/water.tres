@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CollectableResource" load_steps=2 format=3 uid="uid://87qq8ot3imxp"]
+
+[ext_resource type="Script" path="res://resource/collectable_resouce/collectable_resouce.gd" id="1_ck6dc"]
+
+[resource]
+script = ExtResource("1_ck6dc")
+id = "water"
+collectable_name = "Water"

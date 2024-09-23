@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://bp3gpimc8g3g5"]
+
+[ext_resource type="Script" path="res://component/interactable_component/interactable_object_script.gd" id="1_247fu"]
+[ext_resource type="PackedScene" uid="uid://d4arem2t0tcj8" path="res://component/interactable_component/resource_interactable_component.tscn" id="1_jh10m"]
+[ext_resource type="PackedScene" uid="uid://ddem2c4rw15b4" path="res://scene/collectable/power_cell/power_cell.tscn" id="2_dat1b"]
+[ext_resource type="Texture2D" uid="uid://ctgd5l72ubqx" path="res://scene/object/battery_box/Battery Node.png" id="4_cq2r8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3cjkg"]
+radius = 22.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dcptd"]
+size = Vector2(19.7272, 8.06218)
+
+[node name="BatteryBox" type="Node2D" node_paths=PackedStringArray("sprite", "interactable_component")]
+y_sort_enabled = true
+script = ExtResource("1_247fu")
+sprite = NodePath("Sprite2D")
+interactable_component = NodePath("InteractableComponent")
+
+[node name="InteractableComponent" parent="." instance=ExtResource("1_jh10m")]
+resource = ExtResource("2_dat1b")
+max_drop_rate = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+position = Vector2(2, -7)
+shape = SubResource("CircleShape2D_3cjkg")
+debug_color = Color(0.0846357, 0.648976, 0, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("4_cq2r8")
+offset = Vector2(0, -13)
+hframes = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2.9734, -5.90729)
+rotation = -0.523599
+shape = SubResource("RectangleShape2D_dcptd")

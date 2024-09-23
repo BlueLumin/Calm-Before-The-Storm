@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://djyv3tm27i1wu"]
+
+[ext_resource type="Script" path="res://ui/notification/notification.gd" id="1_apm6u"]
+
+[node name="Notification" type="Label"]
+custom_minimum_size = Vector2(180, 0)
+offset_right = 40.0
+offset_bottom = 13.0
+theme_override_constants/line_spacing = -6
+text = "This is a notification."
+autowrap_mode = 2
+script = ExtResource("1_apm6u")

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5rh6mb065jxm"]
+
+[ext_resource type="PackedScene" uid="uid://dxn0557g0xbfv" path="res://component/pickup_resource/pickup_resource.tscn" id="1_1mq4f"]
+[ext_resource type="Texture2D" uid="uid://jramdi32wg75" path="res://scene/collectable/Resources.png" id="2_aujxs"]
+[ext_resource type="Resource" uid="uid://bjmlh52378pny" path="res://resource/collectable_resouce/carrion.tres" id="2_l8v53"]
+[ext_resource type="Texture2D" uid="uid://bhn7juwk1j5yc" path="res://scene/player/Player Shadow.png" id="4_fv88h"]
+
+[node name="Carrion" type="Node2D"]
+z_index = 1
+y_sort_enabled = true
+
+[node name="PickupResource" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("1_1mq4f")]
+resource = ExtResource("2_l8v53")
+sprite = NodePath("../Sprite2D")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.54902)
+position = Vector2(0, 1)
+scale = Vector2(0.5, 1)
+texture = ExtResource("4_fv88h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -5)
+texture = ExtResource("2_aujxs")
+hframes = 6
+frame = 3

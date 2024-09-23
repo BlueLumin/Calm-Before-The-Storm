@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxn0557g0xbfv"]
+
+[ext_resource type="Script" path="res://component/pickup_resource/pickup_resource.gd" id="1_t07gy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_33ayx"]
+radius = 32.0624
+
+[node name="PickupResource" type="Node2D"]
+script = ExtResource("1_t07gy")
+
+[node name="PickupArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+shape = SubResource("CircleShape2D_33ayx")
+
+[node name="PickupCooldown" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true

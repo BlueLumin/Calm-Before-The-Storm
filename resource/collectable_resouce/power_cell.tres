@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CollectableResource" load_steps=2 format=3 uid="uid://8te8bmaa4ohi"]
+
+[ext_resource type="Script" path="res://resource/collectable_resouce/collectable_resouce.gd" id="1_r28ju"]
+
+[resource]
+script = ExtResource("1_r28ju")
+id = "power_cell"
+collectable_name = "Power Cell"

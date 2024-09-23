@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://btti5ohevymam"]
+
+[ext_resource type="PackedScene" uid="uid://dxn0557g0xbfv" path="res://component/pickup_resource/pickup_resource.tscn" id="1_pdxfl"]
+[ext_resource type="Resource" uid="uid://jdglp1lfkde5" path="res://resource/collectable_resouce/moss_ball.tres" id="2_7upvt"]
+[ext_resource type="Texture2D" uid="uid://jramdi32wg75" path="res://scene/collectable/Resources.png" id="3_xm1q2"]
+[ext_resource type="Texture2D" uid="uid://bhn7juwk1j5yc" path="res://scene/player/Player Shadow.png" id="4_r5vs5"]
+
+[node name="MossBall" type="Node2D"]
+z_index = 1
+y_sort_enabled = true
+
+[node name="PickupResource" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("1_pdxfl")]
+resource = ExtResource("2_7upvt")
+sprite = NodePath("../Sprite2D")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.54902)
+position = Vector2(0, 1)
+scale = Vector2(0.5, 1)
+texture = ExtResource("4_r5vs5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -6)
+texture = ExtResource("3_xm1q2")
+hframes = 6
+frame = 1

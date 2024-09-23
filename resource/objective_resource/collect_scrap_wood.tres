@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ObjectiveResource" load_steps=3 format=3 uid="uid://bqkkdpf5asvu8"]
+
+[ext_resource type="Resource" uid="uid://v4q22frpfbxy" path="res://resource/collectable_resouce/scrap_wood.tres" id="1_2laaa"]
+[ext_resource type="Script" path="res://resource/objective_resource/objective_resource.gd" id="2_nyr30"]
+
+[resource]
+script = ExtResource("2_nyr30")
+id = "collect_scrap_wood"
+display_name = "Scrap Wood"
+objective_description = "Collect %d/%d pieces of scrap wood"
+completed_description = "Scrap wood collected"
+related_resouce = ExtResource("1_2laaa")
+quantity_range = Vector2(3, 3)

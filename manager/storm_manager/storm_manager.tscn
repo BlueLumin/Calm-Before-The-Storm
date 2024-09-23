@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq5311xu8ubr5"]
+
+[ext_resource type="Script" path="res://manager/storm_manager/storm_manager.gd" id="1_hp544"]
+
+[node name="StormManager" type="Node2D" groups=["storm_manager"]]
+script = ExtResource("1_hp544")
+
+[node name="StormTimer" type="Timer" parent="."]
+wait_time = 120.0
+one_shot = true

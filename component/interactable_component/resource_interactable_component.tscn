@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4arem2t0tcj8"]
+
+[ext_resource type="Script" path="res://component/interactable_component/resource_interactable_component.gd" id="1_m15sy"]
+
+[node name="InteractableComponent" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_m15sy")
+
+[node name="InteractCooldownTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="CollisonCheckTimer" type="Timer" parent="."]
+one_shot = true

@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=3 uid="uid://bvli5r348nrk8"]
+
+[ext_resource type="PackedScene" uid="uid://dl4mr616y1pon" path="res://manager/objective_manager/objective_manager.tscn" id="1_b1ldc"]
+[ext_resource type="Script" path="res://manager/scene_manager/scene_manager.gd" id="1_ouqno"]
+[ext_resource type="PackedScene" uid="uid://0g3hsb1uqh34" path="res://manager/inventory_manager/inventory_manager.tscn" id="2_ygbre"]
+[ext_resource type="Script" path="res://manager/scene_manager/current_scene.gd" id="4_5hqmi"]
+[ext_resource type="PackedScene" uid="uid://df6se00rfud0e" path="res://ui/fade/fade.tscn" id="5_4et6w"]
+[ext_resource type="PackedScene" uid="uid://bn5euluru0arq" path="res://scene/base/base.tscn" id="5_f6wjo"]
+
+[node name="SceneManager" type="Node2D" groups=["scene_manager"]]
+process_mode = 3
+script = ExtResource("1_ouqno")
+
+[node name="ObjectiveManager" parent="." instance=ExtResource("1_b1ldc")]
+
+[node name="InventoryManager" parent="." instance=ExtResource("2_ygbre")]
+
+[node name="CurrentScene" type="Node2D" parent="."]
+process_mode = 1
+script = ExtResource("4_5hqmi")
+
+[node name="Base" parent="CurrentScene" instance=ExtResource("5_f6wjo")]
+
+[node name="Fade" parent="." instance=ExtResource("5_4et6w")]
+layer = 20
+visible = false

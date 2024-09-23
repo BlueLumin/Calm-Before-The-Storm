@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://djpf1850g4f8k"]
+
+[ext_resource type="Script" path="res://component/resource_spawn_point/resource_spawn_point.gd" id="1_gb417"]
+[ext_resource type="Texture2D" uid="uid://dmisg1jvxcwg4" path="res://icon.svg" id="2_spkw4"]
+
+[node name="none" type="Marker2D"]
+script = ExtResource("1_gb417")
+resource_type = "none"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_spkw4")

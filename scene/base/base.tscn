@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://bn5euluru0arq"]
+
+[ext_resource type="Script" path="res://scene/base/base.gd" id="1_h0mep"]
+[ext_resource type="Texture2D" uid="uid://6acuvagn3hde" path="res://scene/base/Bunker.png" id="1_k2lio"]
+[ext_resource type="PackedScene" uid="uid://dium823wa4x3s" path="res://scene/elevator/elevator.tscn" id="2_m0c68"]
+[ext_resource type="PackedScene" uid="uid://deq586wlf123f" path="res://scene/bunker_player/bunker_player.tscn" id="4_57n70"]
+[ext_resource type="PackedScene" uid="uid://c41cmawmby0hw" path="res://ui/tutorial_pop_up/tutorial_pop_up.tscn" id="5_7l4w4"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ul1jb"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_l52wj"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ur4gx"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2i5ud"]
+size = Vector2(35, 34)
+
+[node name="Base" type="Node2D" node_paths=PackedStringArray("player")]
+script = ExtResource("1_h0mep")
+player = NodePath("Elevator/BunkerPlayer")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="Collisions" type="StaticBody2D" parent="."]
+
+[node name="Floor" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(0, 75.5)
+shape = SubResource("WorldBoundaryShape2D_ul1jb")
+
+[node name="Left" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(-156, 0)
+shape = SubResource("WorldBoundaryShape2D_l52wj")
+
+[node name="Right" type="CollisionShape2D" parent="Collisions"]
+position = Vector2(108, 0)
+shape = SubResource("WorldBoundaryShape2D_ur4gx")
+
+[node name="StepUp" type="CollisionPolygon2D" parent="Collisions"]
+polygon = PackedVector2Array(-116, 74, -126, 74, -126, 71)
+
+[node name="BaseSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_k2lio")
+
+[node name="Elevator" parent="." instance=ExtResource("2_m0c68")]
+z_index = 1
+position = Vector2(-141, -104)
+
+[node name="BunkerPlayer" parent="Elevator" instance=ExtResource("4_57n70")]
+z_as_relative = false
+position = Vector2(0, 11)
+
+[node name="ExitArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea"]
+position = Vector2(-142.5, 58)
+shape = SubResource("RectangleShape2D_2i5ud")
+
+[node name="BaseHUD" type="CanvasLayer" parent="."]
+
+[node name="TutorialPopUp" parent="BaseHUD" instance=ExtResource("5_7l4w4")]

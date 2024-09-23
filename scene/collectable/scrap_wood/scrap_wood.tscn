@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhg25t2ij7wr"]
+
+[ext_resource type="PackedScene" uid="uid://dxn0557g0xbfv" path="res://component/pickup_resource/pickup_resource.tscn" id="1_oi080"]
+[ext_resource type="Resource" uid="uid://v4q22frpfbxy" path="res://resource/collectable_resouce/scrap_wood.tres" id="2_bs8kw"]
+[ext_resource type="Texture2D" uid="uid://jramdi32wg75" path="res://scene/collectable/Resources.png" id="2_ij5jy"]
+[ext_resource type="Texture2D" uid="uid://bhn7juwk1j5yc" path="res://scene/player/Player Shadow.png" id="4_1asag"]
+
+[node name="ScrapWood" type="Node2D"]
+z_index = 1
+y_sort_enabled = true
+
+[node name="PickupResource" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("1_oi080")]
+resource = ExtResource("2_bs8kw")
+sprite = NodePath("../Sprite2D")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.54902)
+position = Vector2(0, 1)
+scale = Vector2(0.5, 1)
+texture = ExtResource("4_1asag")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -7)
+texture = ExtResource("2_ij5jy")
+hframes = 6

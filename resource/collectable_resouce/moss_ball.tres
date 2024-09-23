@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CollectableResource" load_steps=2 format=3 uid="uid://jdglp1lfkde5"]
+
+[ext_resource type="Script" path="res://resource/collectable_resouce/collectable_resouce.gd" id="1_uhk1a"]
+
+[resource]
+script = ExtResource("1_uhk1a")
+id = "moss_ball"
+collectable_name = "Moss Ball"

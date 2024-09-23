@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ObjectiveResource" load_steps=3 format=3 uid="uid://ckbulo4qktiw4"]
+
+[ext_resource type="Resource" uid="uid://bjmlh52378pny" path="res://resource/collectable_resouce/carrion.tres" id="1_kt4w7"]
+[ext_resource type="Script" path="res://resource/objective_resource/objective_resource.gd" id="1_tklm1"]
+
+[resource]
+script = ExtResource("1_tklm1")
+id = "collect_carrion"
+display_name = "Carrion"
+objective_description = "Collect %d/%d pieces of carrion"
+completed_description = "carrion collected"
+related_resouce = ExtResource("1_kt4w7")
+quantity_range = Vector2(3, 6)

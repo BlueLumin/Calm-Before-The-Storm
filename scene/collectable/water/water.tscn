@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmnglt8cjxqa3"]
+
+[ext_resource type="PackedScene" uid="uid://dxn0557g0xbfv" path="res://component/pickup_resource/pickup_resource.tscn" id="1_yx5vt"]
+[ext_resource type="Resource" uid="uid://87qq8ot3imxp" path="res://resource/collectable_resouce/water.tres" id="2_d8yu4"]
+[ext_resource type="Texture2D" uid="uid://jramdi32wg75" path="res://scene/collectable/Resources.png" id="3_smnw7"]
+[ext_resource type="Texture2D" uid="uid://bhn7juwk1j5yc" path="res://scene/player/Player Shadow.png" id="4_87yfo"]
+
+[node name="Water" type="Node2D"]
+z_index = 1
+y_sort_enabled = true
+
+[node name="PickupResource" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("1_yx5vt")]
+resource = ExtResource("2_d8yu4")
+sprite = NodePath("../Sprite2D")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.54902)
+position = Vector2(0, 1)
+scale = Vector2(0.5, 1)
+texture = ExtResource("4_87yfo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -7)
+texture = ExtResource("3_smnw7")
+hframes = 6
+frame = 2

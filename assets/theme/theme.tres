@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cwyjauvaeu07q"]
+
+[ext_resource type="FontFile" uid="uid://b032ubsj0l0he" path="res://assets/fonts/TinyUnicode.ttf" id="1_2phrm"]
+
+[resource]
+default_font = ExtResource("1_2phrm")

@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://ddj2fil5cyme5"]
+
+[ext_resource type="PackedScene" uid="uid://d4arem2t0tcj8" path="res://component/interactable_component/resource_interactable_component.tscn" id="1_5im2x"]
+[ext_resource type="Script" path="res://component/interactable_component/interactable_object_script.gd" id="1_gjjsr"]
+[ext_resource type="PackedScene" uid="uid://bmnglt8cjxqa3" path="res://scene/collectable/water/water.tscn" id="2_8y662"]
+[ext_resource type="Texture2D" uid="uid://ds7lwuhwqtujt" path="res://scene/object/marsh_pool/Water Node.png" id="4_rigko"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t6ype"]
+radius = 33.0151
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6ik5g"]
+radius = 11.0
+height = 42.0
+
+[node name="MarshPool" type="Node2D" node_paths=PackedStringArray("sprite", "interactable_component")]
+y_sort_enabled = true
+script = ExtResource("1_gjjsr")
+sprite = NodePath("Sprite2D")
+interactable_component = NodePath("InteractableComponent")
+
+[node name="InteractableComponent" parent="." instance=ExtResource("1_5im2x")]
+resource = ExtResource("2_8y662")
+max_drop_rate = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+position = Vector2(-1, -8)
+shape = SubResource("CircleShape2D_t6ype")
+debug_color = Color(0.361602, 0.617212, 0, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("4_rigko")
+offset = Vector2(0, -11)
+hframes = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, -8)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_6ik5g")

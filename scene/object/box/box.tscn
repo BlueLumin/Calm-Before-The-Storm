@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://did0lhrptjuhm"]
+
+[ext_resource type="PackedScene" uid="uid://d4arem2t0tcj8" path="res://component/interactable_component/resource_interactable_component.tscn" id="1_j6oiw"]
+[ext_resource type="Script" path="res://component/interactable_component/interactable_object_script.gd" id="1_vjckh"]
+[ext_resource type="PackedScene" uid="uid://dhg25t2ij7wr" path="res://scene/collectable/scrap_wood/scrap_wood.tscn" id="2_pj0i7"]
+[ext_resource type="Texture2D" uid="uid://ctx5pjjfjjr0d" path="res://scene/object/box/Wood Node.png" id="3_40jwj"]
+[ext_resource type="Texture2D" uid="uid://cyjl66jgmkacy" path="res://scene/object/box/Debris.png" id="4_a5uxo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_08u3r"]
+radius = 20.0998
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wndmy"]
+size = Vector2(6.99747, 7.07107)
+
+[node name="Box" type="Node2D" node_paths=PackedStringArray("sprite", "secondary_sprite", "interactable_component", "collision_shape")]
+y_sort_enabled = true
+script = ExtResource("1_vjckh")
+sprite = NodePath("BoxSprite")
+secondary_sprite = NodePath("DebrisSprite")
+interactable_component = NodePath("InteractableComponent")
+destory_collison_on_collect = true
+collision_shape = NodePath("StaticBody2D/CollisionShape2D")
+
+[node name="InteractableComponent" parent="." instance=ExtResource("1_j6oiw")]
+resource = ExtResource("2_pj0i7")
+max_drop_rate = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+position = Vector2(7, -7)
+shape = SubResource("CircleShape2D_08u3r")
+debug_color = Color(0, 0.6, 0.215686, 0.419608)
+
+[node name="BoxSprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_40jwj")
+offset = Vector2(0, -9)
+hframes = 2
+
+[node name="DebrisSprite" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(12, 2)
+texture = ExtResource("4_a5uxo")
+offset = Vector2(0, -9)
+hframes = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 5.96046e-08)
+rotation = -0.785397
+shape = SubResource("RectangleShape2D_wndmy")
