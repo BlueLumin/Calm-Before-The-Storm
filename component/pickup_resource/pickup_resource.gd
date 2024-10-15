@@ -1,3 +1,4 @@
+# Collectable resouce that can be picked up by the player.
 extends Node2D
 
 @onready var pickup_area: Area2D = $PickupArea

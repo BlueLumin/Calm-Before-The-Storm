@@ -1,3 +1,4 @@
+# Resource for objectives. Stores metadata.
 extends Resource
 class_name ObjectiveResource
 

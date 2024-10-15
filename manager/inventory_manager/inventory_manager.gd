@@ -1,3 +1,4 @@
+# Manages the inventory of the player and stores collected resources.
 extends Node
 class_name InventoryManager
 

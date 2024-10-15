@@ -1,3 +1,4 @@
+# Root script for the "Base" scene. 
 extends Node2D
 
 @onready var elevator: StaticBody2D = $Elevator

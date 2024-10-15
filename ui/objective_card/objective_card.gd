@@ -1,3 +1,4 @@
+# Handles the format and display of the objective cards.
 extends PanelContainer
 class_name ObjectiveCard
 

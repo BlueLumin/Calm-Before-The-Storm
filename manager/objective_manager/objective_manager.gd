@@ -1,3 +1,6 @@
+# Manages the objectives.
+# Selects objectives from a pool at the beginning of a game.
+# Updates progression through the game.
 extends Node
 class_name ObjectiveManager
 
@@ -10,13 +13,6 @@ var objective_count: int = 2
 func _ready() -> void:
 	GameEvents.collectable_picked_up.connect(on_collectable_picked_up)
 	GameEvents.return_to_base.connect(on_return_to_base)
-
-
-#DEBUG
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("debug_objectives"):
-		pick_objectives() 
-#DEBUG
 
 
 func pick_objectives():

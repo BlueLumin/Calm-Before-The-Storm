@@ -1,3 +1,4 @@
+# Resource for collectables. Stores metadata.
 extends Resource
 class_name CollectableResource
 

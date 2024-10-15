@@ -1,3 +1,4 @@
+# Handles the "Bunker" scene version of the Player's movement and animation.
 extends CharacterBody2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D

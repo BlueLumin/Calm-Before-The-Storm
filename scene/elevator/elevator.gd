@@ -1,3 +1,4 @@
+# Handles the elevator's movement and starting position.
 extends StaticBody2D
 
 signal position_reached

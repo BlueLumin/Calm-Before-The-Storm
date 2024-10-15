@@ -1,3 +1,4 @@
+# Root script that handles scene change requests, fading in and out, and scene requirments.
 extends Node2D
 class_name SceneManager
 

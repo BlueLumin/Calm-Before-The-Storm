@@ -1,3 +1,4 @@
+# Handles updating and displaying the HUD.
 extends CanvasLayer
 
 @onready var objectives_container: VBoxContainer = $TopHUDMarginContainer/ObjectivesContainer/VBoxContainer

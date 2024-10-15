@@ -1,3 +1,4 @@
+# Handles the current scene and loading the "world".
 extends Node2D
 
 signal scene_loaded

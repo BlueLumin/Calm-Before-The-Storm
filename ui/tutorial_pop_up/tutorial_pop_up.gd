@@ -1,3 +1,4 @@
+# Handles the format and display of the pop-up tutorials.
 extends Control
 
 @onready var tutorial_label: Label = $MarginContainer/MarginContainer/TutorialLabel

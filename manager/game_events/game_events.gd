@@ -1,3 +1,4 @@
+# Stores signals that can be emitted by any scene and listened to by others.
 extends Node
 
 signal objectives_picked(picked: Array)

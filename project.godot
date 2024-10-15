@@ -13,7 +13,8 @@ config_version=5
 config/name="Calm Before the Storm"
 run/main_scene="res://manager/scene_manager/scene_manager.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
+config/windows_native_icon="res://favicon.ico"
 
 [autoload]
 

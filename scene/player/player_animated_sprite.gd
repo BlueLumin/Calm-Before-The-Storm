@@ -1,3 +1,4 @@
+# Stores helper functions for the Player animations.
 extends AnimatedSprite2D
 
 

@@ -1,3 +1,4 @@
+# Handles the scene fade in and out functions.
 extends CanvasLayer
 class_name Fade
 

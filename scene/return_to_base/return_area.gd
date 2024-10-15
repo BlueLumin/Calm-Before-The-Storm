@@ -1,3 +1,5 @@
+# Root script for the interactable return scene. 
+# Allows the player to return to the bunker.
 extends InteractComponent
 
 

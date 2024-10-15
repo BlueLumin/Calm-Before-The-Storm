@@ -1,3 +1,5 @@
+# Used to determine what kind of resource could be spawned at it's position.
+# A tool that runs the script in the editor.
 @tool
 extends Marker2D
 class_name ResourseSpawnPoint

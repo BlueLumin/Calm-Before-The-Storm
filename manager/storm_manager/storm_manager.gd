@@ -1,3 +1,4 @@
+# Handles the storm mechanic, timer, and failure.
 extends Node2D
 class_name StormManager
 

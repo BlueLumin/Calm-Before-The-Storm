@@ -1,3 +1,4 @@
+# Stores global variables in a singleton.
 extends Node
 
 var current_fp: int = 0 ## Fuel Points

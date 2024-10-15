@@ -1,3 +1,4 @@
+# The Game Camera.
 extends Camera2D
 class_name GameCamera
 

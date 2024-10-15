@@ -1,3 +1,5 @@
+# A component that can be added as a child of another node to extend it's functionality.
+# Handles the player interacting with objects that have the InteractComponent.
 extends Area2D
 class_name PlayerInteractableComponent
 

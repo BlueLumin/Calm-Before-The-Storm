@@ -1,3 +1,4 @@
+# Handles the notifications.
 extends Label
 class_name NotificationLabel
 

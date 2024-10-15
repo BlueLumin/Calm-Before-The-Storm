@@ -1,3 +1,5 @@
+# A component that can be added as a child of another node to extend it's functionality.
+# Handles a resource that can be collected and interacted with. 
 extends InteractComponent
 class_name ResourceInteractableComponent
 
@@ -8,11 +10,11 @@ signal collected
 
 @export_group("Resource Settings")
 @export var resource: PackedScene ## The resource's scene that gets dropped by this component.
-@export_range(1, 10) var max_drop_rate: int = 1 ## How many resources this component can drop at once.
-@export_range(1, 10) var min_drop_rate: int = 1 ## How few resources this component can drop at once. 
+@export_range(1, 10) var max_drop_rate: int = 1 ## Max resources this component can drop at once.
+@export_range(1, 10) var min_drop_rate: int = 1 ## Min resources this component can drop at once. 
 
 @export_group("Interact Settings")
-@export var interact_number: int = 1 ## The number of times you can interact with this (-1 means infinite times).
+@export var interact_number: int = 1 ## The number of times you can interact with this (-1 = infinite times).
 @export var interactable: bool = true ## Determines whether or not you can interact with it.
 
 var times_interacted: int = 0

@@ -1,3 +1,5 @@
+# The Player Character.
+# Handles movement metadata, movement, and animations.
 extends CharacterBody2D
 class_name Player
 

@@ -1,3 +1,4 @@
+# Spawns random resources at the beginning of the game and "creates" the level.
 extends Node2D
 class_name ResourceSpawner
 
@@ -33,13 +34,6 @@ var resources: Dictionary =  {
 }
 
 
-# DEBUG
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
-		create_level()
-# DEBUG
-
-
 func create_level():
 	var markers = get_children()
 	
@@ -51,11 +45,11 @@ func create_level():
 	print("Count of resource spawn points:")
 	for object in resources:
 		print(object, ": ", resources[object]["markers"].size()) # Print the amount of markers.
-		# Get the number of markers in the scene
+		# Get the number of markers in the scene.
 		var marker_count: int = resources[object]["markers"].size()
 		# Save the spawn range of the object.
 		var spawn_range: Vector2i = resources[object]["spawn_range"]
-		# For safety, ensure nether of the ranges goes above the marker count.
+		# For safety, ensure neither of the ranges goes above the marker count.
 		spawn_range = Vector2i(min(spawn_range.x, marker_count), min(spawn_range.y, marker_count))
 		
 		for i in randi_range(spawn_range.x, spawn_range.y):
@@ -65,10 +59,10 @@ func create_level():
 			# Pick a random marker from those that haven't already been picked.
 			var chosen_marker = filtered_markers.pick_random() as ResourseSpawnPoint
 			
-			# Let the mini map know to create a sprite
+			# Let the mini map know to create a sprite.
 			GameEvents.emit_resouce_spawned(resources.find_key(resources[object]), chosen_marker.global_position)
 			
-			# Create the object on the marker and mark it as "picked"
+			# Create the object on the marker and mark it as "picked".
 			chosen_marker.spawn_resource(resources[object]["scene"])
 			chosen_marker.picked = true
 	

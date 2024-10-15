@@ -1,3 +1,4 @@
+# Root script for the ElevatorShaft scene. Handles triggering the Elevator movement.
 extends Node2D
 
 @export var elevator: StaticBody2D

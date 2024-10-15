@@ -1,3 +1,4 @@
+# Handles the minimap, displaying resource locations, and the player location.
 extends SubViewportContainer
 
 @onready var mini_map_camera: Camera2D = $MiniMapViewport/MiniMapCamera
